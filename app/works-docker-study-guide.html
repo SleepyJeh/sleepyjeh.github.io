@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Docker Study Guide • Cloud Computing Portfolio</title>
+  </head>
+
+  <body class="min-h-screen bg-base-100 flex flex-col">
+    <header class="border-b border-base-200 bg-base-100/80 backdrop-blur z-30">
+      <nav class="navbar mx-auto max-w-6xl px-4 lg:px-6" aria-label="Global navigation">
+        <div class="flex-1">
+          <a href="index.html#home" class="flex items-center gap-2">
+            <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-content font-semibold">CC</span>
+            <span class="font-semibold text-lg tracking-tight">Cloud Computing Portfolio</span>
+          </a>
+        </div>
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="index.html#home" class="btn btn-ghost btn-sm font-medium">Home</a>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Topics</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200">
+              <li><a href="rest-api.html">Rest API</a></li>
+              <li><a href="map-reduce.html">Map Reduce</a></li>
+              <li><a href="aws-vm.html">AWS / VM Instance</a></li>
+              <li><a href="cloud-native.html">Cloud Native</a></li>
+              <li><a href="devops-persona.html">DevOps Persona</a></li>
+              <li><a href="docker.html">Docker</a></li>
+              <li><a href="containerization-vs-virtualization.html">Containerization vs Virtualization</a></li>
+              <li><a href="kubernetes.html">Kubernetes</a></li>
+              <li><a href="terraform.html">Terraform</a></li>
+            </ul>
+          </div>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Works &amp; Outputs</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200">
+              <li><a href="works.html">Overview</a></li>
+              <li><a href="works-docker-study-guide.html">A Docker Study Guide</a></li>
+              <li><a href="works-kubernetes-home-lab.html">Kubernetes Home Lab Activity</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <section class="py-12 lg:py-16 bg-base-100">
+        <div class="max-w-5xl mx-auto px-4 lg:px-6 space-y-12">
+          
+          <div>
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-medium text-primary mb-2">Work &amp; Output</p>
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">A Docker Study Guide</h1>
+                </div>
+            </div>
+            <p class="text-lg text-base-content/80 leading-relaxed">
+              This document outlines a detailed and effective study plan for a student to gain a comprehensive understanding of Docker and containerization. The plan is structured to build foundational knowledge first, explore the technology's history, and then progress to practical implementation and modern best practices.
+            </p>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 1: The Foundations of Containerization</h2>
+              <p class="italic text-base-content/70">This module establishes the core problem that containerization solves.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To understand why containers exist and how they differ from traditional virtualization.</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+
+              <div class="space-y-4">
+                <div>
+                    <h4 class="font-bold text-secondary">The "It Works on My Machine" Problem</h4>
+                    <p>The student will first explore the challenges of software deployment, including dependency conflicts and environment inconsistency between development, testing, and production.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-secondary">Virtualization vs. Containerization</h4>
+                    <p>The student must learn the distinction.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-2">
+                        <div class="bg-base-300 p-4 rounded-box">
+                            <span class="badge badge-error mb-2">Virtual Machines (VMs)</span>
+                            <p class="text-sm">These are explained as hardware abstractions. Each VM bundles a full guest operating system, application, and binaries, which is resource-heavy.</p>
+                        </div>
+                        <div class="bg-base-300 p-4 rounded-box">
+                            <span class="badge badge-success mb-2">Containers</span>
+                            <p class="text-sm">These are explained as OS-level abstractions. Containers share the host system's kernel but isolate the application processes. This makes them lightweight, fast to start, and portable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-secondary">The Docker Ecosystem</h4>
+                    <p>The student will be introduced to the three main components of Docker:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li><strong>Docker Engine:</strong> The background service (daemon) that builds, runs, and manages containers.</li>
+                        <li><strong>Docker Client:</strong> The command-line interface (CLI) tool that the user interacts with to send commands to the daemon.</li>
+                        <li><strong>Docker Registry:</strong> A remote repository for storing and distributing Docker images (e.g., Docker Hub).</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 2: The History of Containerization</h2>
+              <p class="italic text-base-content/70">This module provides the precise historical context required to understand Docker's innovation.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To trace the evolution of process isolation from its origins to the advent of Docker.</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+
+              <ul class="timeline timeline-vertical timeline-compact">
+                <li>
+                  <div class="timeline-middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg></div>
+                  <div class="timeline-end timeline-box bg-base-300 w-full text-left">
+                    <span class="font-bold">1979 - chroot:</span> The student will learn about the chroot system call in Unix V7. This is the earliest form of process isolation, limiting a process to a specific directory tree.
+                  </div>
+                  <hr/>
+                </li>
+                <li>
+                  <hr/>
+                  <div class="timeline-middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg></div>
+                  <div class="timeline-end timeline-box bg-base-300 w-full text-left">
+                    <span class="font-bold">2000 - FreeBSD Jails:</span> This concept is studied as a significant leap forward. Jails virtualized the operating system at a deeper level, isolating not just the filesystem but also users and the network.
+                  </div>
+                  <hr/>
+                </li>
+                <li>
+                  <hr/>
+                  <div class="timeline-middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg></div>
+                  <div class="timeline-end timeline-box bg-base-300 w-full text-left">
+                    <span class="font-bold">2004 - Solaris Zones:</span> The student will explore this as the first robust, commercially supported container technology, which created fully isolated virtual servers on a single OS.
+                  </div>
+                  <hr/>
+                </li>
+                <li>
+                  <hr/>
+                  <div class="timeline-middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg></div>
+                  <div class="timeline-end timeline-box bg-base-300 w-full text-left">
+                    <span class="font-bold">2006-2008 - Google's Contributions & Linux Containers (LXC):</span> The plan will focus on two key Linux kernel features:
+                    <ul class="list-disc list-inside mt-1 ml-2 text-sm">
+                        <li><strong>Control Groups (cgroups):</strong> For limiting and accounting for resource usage (CPU, memory, etc.).</li>
+                        <li><strong>Namespaces:</strong> For isolating a process's view of the system (e.g., process IDs, network, users). The student will learn that LXC was the first project to combine cgroups and namespaces into a usable container experience.</li>
+                    </ul>
+                  </div>
+                  <hr/>
+                </li>
+                <li>
+                  <hr/>
+                  <div class="timeline-middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-primary"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg></div>
+                  <div class="timeline-end timeline-box bg-primary text-primary-content w-full text-left">
+                    <span class="font-bold">2013 - The Docker Revolution:</span> The student will learn that Docker (initially built on LXC) did not invent containers. Instead, it succeeded by creating a simple, user-friendly API, a powerful image-layering system (the Dockerfile), and a centralized registry (Docker Hub). This "packaging" made containerization accessible to all developers.
+                  </div>
+                  <hr/>
+                </li>
+                <li>
+                  <hr/>
+                  <div class="timeline-middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg></div>
+                  <div class="timeline-end timeline-box bg-base-300 w-full text-left">
+                    <span class="font-bold">2015 - The Open Container Initiative (OCI):</span> The plan concludes with the formation of the OCI, which standardized container formats and runtimes, ensuring interoperability and preventing vendor lock-in.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 3: Core Docker Concepts & Practical Commands</h2>
+              <p class="italic text-base-content/70">This module moves from theory to hands-on application.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To interact with Docker, manage images and containers, and understand the core workflow.</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+
+              <div class="space-y-4">
+                  <div>
+                    <h4 class="font-bold text-secondary">Images vs. Containers</h4>
+                    <p>This is the most critical concept.</p>
+                    
+
+[Image of Docker container lifecycle]
+
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li><strong>Image:</strong> A read-only, inert template or "blueprint" (e.g., a simple alpine Linux image).</li>
+                        <li><strong>Container:</strong> A running, writable instance of an image (e.g., an alpine shell you can type commands into).</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-secondary">Docker Hub</h4>
+                    <p>The student will learn to use the public registry.</p>
+                    <div class="mockup-code bg-base-300 text-sm mt-2">
+                        <pre><code>docker pull nginx <span class="text-gray-500"># To download the official Nginx web server image.</span></code></pre>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-secondary">Essential Commands</h4>
+                    <p>The student will practice the main container lifecycle commands:</p>
+                    <div class="overflow-x-auto mt-2">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>docker run -d -p 8080:80 nginx</code></td>
+                                    <td>To run a container in detached mode, mapping port 8080 on the host to port 80 in the container.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docker ps</code></td>
+                                    <td>To list all running containers.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docker ps -a</code></td>
+                                    <td>To list all containers, including stopped ones.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docker stop &lt;container_id&gt;</code></td>
+                                    <td>To gracefully stop a container.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docker rm &lt;container_id&gt;</code></td>
+                                    <td>To remove a stopped container.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docker images</code></td>
+                                    <td>To list all images stored locally.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>docker rmi &lt;image_id&gt;</code></td>
+                                    <td>To remove an image.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 4: Building Custom Images with Dockerfile</h2>
+              <p class="italic text-base-content/70">The student now learns to create their own applications.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To write a Dockerfile to package a custom application into a shareable image.</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+              
+              <div class="space-y-4">
+                  <div>
+                      <h4 class="font-bold text-secondary">The Dockerfile</h4>
+                      <p>This is studied as the "recipe" for building an image.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-bold text-secondary">Key Instructions</h4>
+                      <p>The student will learn the syntax and purpose of the most common directives:</p>
+                      <ul class="list-disc list-inside mt-2 ml-4 space-y-2">
+                          <li><code>FROM</code>: Specifies the base image (e.g., <code>FROM python:3.11-slim</code>).</li>
+                          <li><code>WORKDIR</code>: Sets the working directory inside the image.</li>
+                          <li><code>COPY</code>: Copies files from the host into the image's filesystem (e.g., <code>COPY . .</code>).</li>
+                          <li><code>RUN</code>: Executes a command during the build process (e.g., <code>RUN pip install -r requirements.txt</code>).</li>
+                          <li><code>EXPOSE</code>: Informs Docker that the container listens on a specific network port.</li>
+                          <li><code>CMD</code>: Provides the default command to run when the container starts (e.g., <code>CMD ["python", "app.py"]</code>).</li>
+                      </ul>
+                  </div>
+                  <div>
+                      <h4 class="font-bold text-secondary">Build Process</h4>
+                      <p>The student will use this command to build the image from the Dockerfile in the current directory (.) and tag (-t) it:</p>
+                      <div class="mockup-code bg-base-300 text-sm mt-2">
+                        <pre><code>docker build -t my-app:1.0 .</code></pre>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 5: Persistent Storage and Networking</h2>
+              <p class="italic text-base-content/70">This module addresses how to manage data and communication for real-world applications.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To understand how to save data outside of an ephemeral container and how to connect containers.</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+              
+              <div class="space-y-4">
+                <div>
+                    <h4 class="font-bold text-secondary">The Ephemeral Container</h4>
+                    <p>The student must first understand that all data written inside a container is lost when the container is removed.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary">Storage Solutions</h4>
+                    
+                    <ul class="list-disc list-inside mt-2 ml-4 space-y-2">
+                        <li><strong>Volumes:</strong> This is the preferred method. The student will learn that volumes are Docker-managed storage areas on the host machine. They are easily backed up, migrated, and persist even if the container is deleted.</li>
+                        <li><strong>Bind Mounts:</strong> The student will learn this method directly links (mounts) a file or directory from the host machine into the container. This is useful for development but less portable.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary">Networking Concepts</h4>
+                    <ul class="list-disc list-inside mt-2 ml-4 space-y-2">
+                        <li><strong>Bridge Network (Default):</strong> Containers on the same bridge network can communicate with each other, but are isolated from the host.</li>
+                        <li><strong>Host Network:</strong> The container shares the host's network stack, offering high performance but no network isolation.</li>
+                        <li><strong>Overlay Network:</strong> This is an advanced topic for connecting containers across multiple Docker hosts, used by orchestration tools.</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 6: Multi-Container Applications with Docker Compose</h2>
+              <p class="italic text-base-content/70">This module scales up the complexity from a single container to a full application stack.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To use Docker Compose to define and run applications with multiple services (e.g., a web app, database, and cache).</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+
+              <div class="space-y-4">
+                <div>
+                    <h4 class="font-bold text-secondary">Docker Compose</h4>
+                    <p>This is introduced as a tool for defining and running multi-container applications using a simple YAML file.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary">The docker-compose.yml File</h4>
+                    <p>The student will learn the syntax for defining:</p>
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li><strong>services:</strong> Each container in the application (e.g., a web service and a db service).</li>
+                        <li><strong>image or build:</strong> To specify whether to pull an image or build from a Dockerfile.</li>
+                        <li><strong>ports:</strong> To map ports.</li>
+                        <li><strong>volumes:</strong> To attach persistent volumes.</li>
+                        <li><strong>networks:</strong> To connect services to custom networks.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary">Compose Commands</h4>
+                    <ul class="list-disc list-inside mt-2 ml-4 space-y-1">
+                        <li><code>docker-compose up -d</code>: To start all services in the background.</li>
+                        <li><code>docker-compose down</code>: To stop and remove all containers, networks, and volumes.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-secondary">Service Discovery</h4>
+                    <p>The student will learn that from the web container, the db service can be reached simply by using the hostname <code>db</code>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-primary">Module 7: Implementation Best Practices (Precise & Detailed)</h2>
+              <p class="italic text-base-content/70">This module focuses on the "right way" to implement Docker, emphasizing security and efficiency.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To learn and apply modern best practices for building secure, minimal, and efficient container images.</p>
+              </div>
+
+              <div class="divider">Key Topics</div>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                  <div class="space-y-3">
+                      <h4 class="font-bold text-secondary text-lg">Image Optimization (Efficiency)</h4>
+                      <ul class="space-y-4">
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Use Minimal Base Images:</strong> The student will be instructed to always prefer small base images (e.g., alpine, slim-buster) over the default full OS (e.g., ubuntu) to reduce size and attack surface.
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Use Multi-Stage Builds:</strong> This is a critical practice. The student will learn to use one FROM stage to build the application (which includes all build tools like gcc, maven, etc.) and a second, clean FROM stage to copy only the compiled application binary. This results in a tiny, production-ready image.
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Leverage Layer Caching:</strong> The student will be taught to structure the Dockerfile by putting instructions that change infrequently (like <code>RUN apt-get install...</code>) before instructions that change frequently (like <code>COPY . .</code>).
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Use .dockerignore:</strong> The student will create a .dockerignore file to exclude unnecessary files (like .git, node_modules, README.md) from the build context, speeding up the build.
+                          </li>
+                      </ul>
+                  </div>
+
+                  <div class="space-y-3">
+                      <h4 class="font-bold text-secondary text-lg">Security & Operational Best Practices</h4>
+                      <ul class="space-y-4">
+                          <li class="bg-base-300 p-3 rounded-lg border-l-4 border-error">
+                              <strong>Run as Non-Root:</strong> This is the most important security practice. The student will learn to create a non-privileged user (<code>RUN adduser...</code>) and switch to it (<code>USER myuser</code>) in the Dockerfile to prevent a container breakout.
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Use Official & Verified Images:</strong> Always pull from official repositories to avoid malicious images.
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Scan Images:</strong> The student will be introduced to the concept of scanning images for known vulnerabilities (e.g., using docker scout or other tools).
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Do Not Hardcode Secrets:</strong> The student will be explicitly taught never to put passwords, API keys, or other secrets into a Dockerfile. These must be injected at runtime using environment variables (-e) or Docker Secrets.
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Keep Containers Single-Purpose:</strong> Each container should do one thing well (e.g., one container for the web server, one for the database).
+                          </li>
+                          <li class="bg-base-300 p-3 rounded-lg">
+                              <strong>Tag Images Precisely:</strong> The student will be taught to avoid the <code>:latest</code> tag and use semantic versioning (e.g., my-app:1.2.1).
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-primary text-primary-content shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-2xl">Module 8: Capstone Project & Next Steps</h2>
+              <p class="italic opacity-80">This final module synthesizes all learned skills.</p>
+              
+              <div class="my-2">
+                <h3 class="font-bold text-lg">Objective</h3>
+                <p>To apply all concepts by containerizing a complete application using best practices.</p>
+              </div>
+              
+              <div class="mt-4">
+                  <h3 class="font-bold text-lg border-b border-primary-content/30 pb-2 mb-2">Project</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                      <li>The student will be given a simple two-tier application (e.g., a Python Flask app with a Redis database).</li>
+                      <li>The task is to write a Dockerfile for the web app that uses a multi-stage build and runs as a non-root user.</li>
+                      <li>The student must then write a <code>docker-compose.yml</code> file that defines the web and database services, sets up a volume for the database, and connects them on a custom network.</li>
+                  </ul>
+              </div>
+
+              <div class="mt-6">
+                  <h3 class="font-bold text-lg border-b border-primary-content/30 pb-2 mb-2">Next Steps</h3>
+                  <p class="mb-2">The plan will conclude by introducing the student to the next logical step: Container Orchestration. This is what is used to manage containers at scale.</p>
+                  <ul class="list-disc list-inside space-y-1">
+                      <li><strong>Kubernetes (K8s):</strong> The industry standard for orchestration.</li>
+                      <li><strong>Docker Swarm:</strong> Docker's native, simpler orchestration tool.</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-100 border border-base-300">
+            <div class="card-body">
+                <h3 class="card-title text-xl text-secondary">Citation</h3>
+                <ul class="list-disc list-inside text-sm space-y-2 text-base-content/70 break-all">
+                    <li>Aqua Security. (2020, January 10). A Brief History of Containers: From the 1970s Till Now. Retrieved from https://www.aquasec.com/blog/a-brief-history-of-containers-from-1970s-chroot-to-docker-2016/</li>
+                    <li>freeCodeCamp. (2024, November 26). An Introduction to Docker and Containers for Beginners. Retrieved from https://www.freecodecamp.org/news/an-introduction-to-docker-and-containers-for-beginners/</li>
+                    <li>Simplilearn. (2025, May 26). Docker Tutorial with Examples. Retrieved from https://www.simplilearn.com/tutorials/docker-tutorial</li>
+                    <li>Docker. (2024, January 4). 8 Top Docker Tips & Tricks for 2024. Docker Blog. Retrieved from https://www.docker.com/blog/8-top-docker-tips-tricks-for-2024/</li>
+                    <li>Slashdev.io. (2024). Docker and Containerization Trends in 2024. Retrieved from https://slashdev.io/-docker-and-containerization-trends-in-2024</li>
+                    <li>Techburner. (2024). Mastering Docker in 2024: Essential Tips and Best Practices. Retrieved from https://techburner.neocities.org/mastering-docker-in-2024-essential-tips-and-best-practices</li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="pt-4">
+              <a href="index.html#home" class="btn btn-ghost btn-sm">← Back to Home</a>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer-center p-8 bg-base-200 text-base-content mt-8 border-t border-base-300">
+      <aside>
+        <p class="font-bold text-lg">My Cloud Computing Portfolio</p>
+        <p class="text-base-content/70">Elective 3: Cloud Computing &mdash; compiled learnings, topics, and outputs.</p>
+        <p class="text-sm text-base-content/50">Copyright © 2024 - All rights reserved</p>
+      </aside>
+      <nav>
+        <div class="grid grid-flow-col gap-4 text-sm">
+          <a href="index.html#home" class="link link-hover">Home</a>
+          <a href="index.html#topics" class="link link-hover">Topics</a>
+          <a href="works.html" class="link link-hover">Works &amp; Outputs</a>
+        </div>
+      </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

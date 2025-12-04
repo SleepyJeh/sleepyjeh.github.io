@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+@plugin "daisyui" {
+  themes: night --default;
+}
+
+@source "../node_modules/flowbite";

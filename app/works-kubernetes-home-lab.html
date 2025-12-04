@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubernetes Home Lab Activity • Cloud Computing Portfolio</title>
+  </head>
+
+  <body class="min-h-screen bg-base-100 flex flex-col">
+    <header class="border-b border-base-200 bg-base-100/80 backdrop-blur z-30">
+      <nav
+        class="navbar mx-auto max-w-6xl px-4 lg:px-6"
+        aria-label="Global navigation"
+      >
+        <div class="flex-1">
+          <a href="index.html#home" class="flex items-center gap-2">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-content font-semibold"
+              >CC</span
+            >
+            <span class="font-semibold text-lg tracking-tight"
+              >Cloud Computing Portfolio</span
+            >
+          </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="index.html#home" class="btn btn-ghost btn-sm font-medium"
+            >Home</a
+          >
+
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Topics</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
+            >
+              <li><a href="rest-api.html">Rest API</a></li>
+              <li><a href="map-reduce.html">Map Reduce</a></li>
+              <li><a href="aws-vm.html">AWS / VM Instance</a></li>
+              <li><a href="cloud-native.html">Cloud Native</a></li>
+              <li><a href="devops-persona.html">DevOps Persona</a></li>
+              <li><a href="docker.html">Docker</a></li>
+              <li>
+                <a href="containerization-vs-virtualization.html"
+                  >Containerization vs Virtualization</a
+                >
+              </li>
+              <li><a href="kubernetes.html">Kubernetes</a></li>
+              <li><a href="terraform.html">Terraform</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Works &amp; Outputs</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
+            >
+              <li><a href="works.html">Overview</a></li>
+              <li>
+                <a href="works-docker-study-guide.html">A Docker Study Guide</a>
+              </li>
+              <li>
+                <a href="works-kubernetes-home-lab.html"
+                  >Kubernetes Home Lab Activity</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:hidden">
+          <button
+            type="button"
+            command="show-modal"
+            commandfor="mobile-menu"
+            class="btn btn-ghost btn-square btn-sm"
+            aria-label="Open main menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <el-dialog>
+        <dialog id="mobile-menu" class="backdrop:bg-black/40 lg:hidden">
+          <div tabindex="0" class="fixed inset-0 flex justify-end">
+            <el-dialog-panel
+              class="h-full w-full max-w-xs bg-base-100 shadow-xl border-l border-base-200 p-6 flex flex-col gap-6"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-content text-sm font-semibold"
+                    >CC</span
+                  >
+                  <span class="font-semibold text-sm">Cloud Computing</span>
+                </div>
+                <button
+                  type="button"
+                  command="close"
+                  commandfor="mobile-menu"
+                  class="btn btn-ghost btn-square btn-sm"
+                  aria-label="Close menu"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18 18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="flex-1 overflow-y-auto">
+                <ul class="menu gap-1">
+                  <li>
+                    <a
+                      href="index.html#home"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="menu-title pt-3">
+                    <span>Topics</span>
+                  </li>
+                  <li>
+                    <a
+                      href="rest-api.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Rest API</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="map-reduce.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Map Reduce</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="aws-vm.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >AWS / VM Instance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="cloud-native.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Cloud Native</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="devops-persona.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >DevOps Persona</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="docker.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Docker</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="containerization-vs-virtualization.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Containerization vs Virtualization</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="kubernetes.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Kubernetes</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="terraform.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Terraform</a
+                    >
+                  </li>
+                  <li class="menu-title pt-4">
+                    <span>Works &amp; Outputs</span>
+                  </li>
+                  <li>
+                    <a
+                      href="works.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Overview</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="works-docker-study-guide.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >A Docker Study Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="works-kubernetes-home-lab.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Kubernetes Home Lab Activity</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border-t border-base-200 pt-4">
+                <a
+                  href="works.html"
+                  command="close"
+                  commandfor="mobile-menu"
+                  class="btn btn-primary btn-block"
+                  >Works &amp; Outputs</a
+                >
+              </div>
+            </el-dialog-panel>
+          </div>
+        </dialog>
+      </el-dialog>
+    </header>
+
+    <main class="flex-1">
+      <section class="py-12 lg:py-16 bg-base-100">
+        <div class="max-w-4xl mx-auto px-4 lg:px-6">
+          <p class="text-sm font-medium text-primary mb-2">
+            Work &amp; Output
+          </p>
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">
+            Kubernetes Home Lab Activity
+          </h1>
+          <p class="text-base text-base-content/80 mb-6">
+            A guided activity where you build a small Kubernetes environment and
+            deploy a sample application. Replace this description with your own
+            step-by-step lab instructions, screenshots, or CLI logs.
+          </p>
+          <ul class="list-disc list-inside text-sm text-base-content/80 mb-6">
+            <li>Cluster setup (kind, Minikube, or managed Kubernetes)</li>
+            <li>Creating Deployments and exposing them via Services</li>
+            <li>Scaling, viewing logs, and cleaning up resources</li>
+          </ul>
+
+          <a href="index.html#home" class="btn btn-ghost btn-sm"
+            >← Back to Home</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="footer footer-center p-8 bg-base-200 text-base-content mt-8 border-t border-base-300"
+    >
+      <aside>
+        <p class="font-bold text-lg">My Cloud Computing Portfolio</p>
+        <p class="text-base-content/70">
+          Elective 3: Cloud Computing &mdash; compiled learnings, topics, and
+          outputs.
+        </p>
+        <p class="text-sm text-base-content/50">
+          Copyright © 2024 - All rights reserved
+        </p>
+      </aside>
+      <nav>
+        <div class="grid grid-flow-col gap-4 text-sm">
+          <a href="index.html#home" class="link link-hover">Home</a>
+          <a href="index.html#topics" class="link link-hover">Topics</a>
+          <a href="works.html" class="link link-hover">Works &amp; Outputs</a>
+        </div>
+      </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+
