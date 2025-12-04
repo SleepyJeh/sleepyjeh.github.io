@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   base: '/', // IMPORTANT: Replace with your actual GitHub repo name
-  root: path.resolve(__dirname, 'app'),
+  root: __dirname,
   publicDir: path.resolve(__dirname, 'public'),
   plugins: [tailwindcss()],
   resolve: {
