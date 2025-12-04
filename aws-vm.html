@@ -98,8 +98,202 @@
               </li>
             </ul>
           </div>
+
+        <!-- Mobile menu button -->
+        <div class="lg:hidden">
+          <button
+            type="button"
+            command="show-modal"
+            commandfor="mobile-menu"
+            class="btn btn-ghost btn-square btn-sm"
+            aria-label="Open main menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
         </div>
       </nav>
+
+      <!-- Mobile menu (Flowbite dialog pattern reused) -->
+      <el-dialog>
+        <dialog id="mobile-menu" class="backdrop:bg-black/40 lg:hidden">
+          <div tabindex="0" class="fixed inset-0 flex justify-end">
+            <el-dialog-panel
+              class="h-full w-full max-w-xs bg-base-100 shadow-xl border-l border-base-200 p-6 flex flex-col gap-6"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-content text-sm font-semibold"
+                    >CC</span
+                  >
+                  <span class="font-semibold text-sm">Cloud Computing</span>
+                </div>
+                <button
+                  type="button"
+                  command="close"
+                  commandfor="mobile-menu"
+                  class="btn btn-ghost btn-square btn-sm"
+                  aria-label="Close menu"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18 18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="flex-1 overflow-y-auto">
+                <ul class="menu gap-1">
+                  <li>
+                    <a
+                      href="/index.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="menu-title pt-3">
+                    <span>Topics</span>
+                  </li>
+                  <li>
+                    <a
+                      href="/rest-api.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Rest API</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/map-reduce.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Map Reduce</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/aws-vm.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >AWS / VM Instance</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/cloud-native.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Cloud Native</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/devops-persona.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >DevOps Persona</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/docker.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Docker</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/containerization-vs-virtualization.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Containerization vs Virtualization</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/kubernetes.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Kubernetes</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/terraform.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Terraform</a
+                    >
+                  </li>
+                  <li class="menu-title pt-4">
+                    <span>Works &amp; Outputs</span>
+                  </li>
+                  <li>
+                    <a
+                      href="/works.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Overview</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/works-docker-study-guide.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >A Docker Study Guide</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/works-kubernetes-home-lab.html"
+                      command="close"
+                      commandfor="mobile-menu"
+                      >Kubernetes Home Lab Activity</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border-t border-base-200 pt-4">
+                <a
+                  href="/works.html"
+                  command="close"
+                  commandfor="mobile-menu"
+                  class="btn btn-primary btn-block"
+                  >Works &amp; Outputs</a
+                >
+              </div>
+            </el-dialog-panel>
+          </div>
+        </dialog>
+      </el-dialog>
     </header>
 
     <main class="flex-1">
@@ -273,7 +467,7 @@
           </div>
 
           <div class="pt-4">
-              <a href="/index.html" class="btn btn-ghost btn-sm">â† Back to Home</a>
+              <a href="/index.html" class="btn btn-ghost btn-sm">← Back to Home</a>
           </div>
 
         </div>
