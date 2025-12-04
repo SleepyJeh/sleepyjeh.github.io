@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MapReduce Study Notes • Cloud Computing Portfolio</title>
+    <title>MapReduce Study Notes â€¢ Cloud Computing Portfolio</title>
   </head>
 
   <body class="min-h-screen bg-base-100 flex flex-col">
@@ -14,7 +14,7 @@
         aria-label="Global navigation"
       >
         <div class="flex-1">
-          <a href="index.html#home" class="flex items-center gap-2">
+          <a href="/index.html" class="flex items-center gap-2">
             <span
               class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-content font-semibold"
               >CC</span
@@ -26,7 +26,7 @@
         </div>
 
         <div class="hidden lg:flex items-center gap-4">
-          <a href="index.html#home" class="btn btn-ghost btn-sm font-medium"
+          <a href="/index.html" class="btn btn-ghost btn-sm font-medium"
             >Home</a
           >
 
@@ -50,19 +50,19 @@
               tabindex="0"
               class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
             >
-              <li><a href="rest-api.html">Rest API</a></li>
-              <li><a href="map-reduce.html">Map Reduce</a></li>
-              <li><a href="aws-vm.html">AWS / VM Instance</a></li>
-              <li><a href="cloud-native.html">Cloud Native</a></li>
-              <li><a href="devops-persona.html">DevOps Persona</a></li>
-              <li><a href="docker.html">Docker</a></li>
+              <li><a href="/rest-api.html">Rest API</a></li>
+              <li><a href="/map-reduce.html">Map Reduce</a></li>
+              <li><a href="/aws-vm.html">AWS / VM Instance</a></li>
+              <li><a href="/cloud-native.html">Cloud Native</a></li>
+              <li><a href="/devops-persona.html">DevOps Persona</a></li>
+              <li><a href="/docker.html">Docker</a></li>
               <li>
-                <a href="containerization-vs-virtualization.html"
+                <a href="/containerization-vs-virtualization.html"
                   >Containerization vs Virtualization</a
                 >
               </li>
-              <li><a href="kubernetes.html">Kubernetes</a></li>
-              <li><a href="terraform.html">Terraform</a></li>
+              <li><a href="/kubernetes.html">Kubernetes</a></li>
+              <li><a href="/terraform.html">Terraform</a></li>
             </ul>
           </div>
 
@@ -86,12 +86,12 @@
               tabindex="0"
               class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
             >
-              <li><a href="works.html">Overview</a></li>
+              <li><a href="/works.html">Overview</a></li>
               <li>
-                <a href="works-docker-study-guide.html">A Docker Study Guide</a>
+                <a href="/works-docker-study-guide.html">A Docker Study Guide</a>
               </li>
               <li>
-                <a href="works-kubernetes-home-lab.html"
+                <a href="/works-kubernetes-home-lab.html"
                   >Kubernetes Home Lab Activity</a
                 >
               </li>
@@ -149,7 +149,7 @@
               <div class="grid lg:grid-cols-2 gap-6 mt-4">
                   <div class="bg-base-300 p-5 rounded-xl border border-base-100">
                       <h3 class="font-bold text-lg text-primary mb-2">Map Function</h3>
-                      <p class="text-xs mb-3 font-mono">map(k1, v1) → list(k2, v2)</p>
+                      <p class="text-xs mb-3 font-mono">map(k1, v1) â†’ list(k2, v2)</p>
                       <p class="text-sm mb-4">Takes an input pair and produces a set of <em>intermediate</em> key/value pairs. The library groups all values associated with the same intermediate key `k2` and passes them to the Reduce function.</p>
                       
                       <div class="mockup-code bg-base-100 text-xs">
@@ -161,7 +161,7 @@
 
                   <div class="bg-base-300 p-5 rounded-xl border border-base-100">
                       <h3 class="font-bold text-lg text-accent mb-2">Reduce Function</h3>
-                      <p class="text-xs mb-3 font-mono">reduce(k2, list(v2)) → list(v2)</p>
+                      <p class="text-xs mb-3 font-mono">reduce(k2, list(v2)) â†’ list(v2)</p>
                       <p class="text-sm mb-4">Accepts an intermediate key and a list of values for that key. It merges these values to form a smaller set (often just zero or one value).</p>
                       
                       <div class="mockup-code bg-base-100 text-xs">
@@ -289,7 +289,7 @@
             </div>
           </div>
           
-          <a href="index.html#home" class="btn btn-ghost btn-sm self-start"
+          <a href="/index.html" class="btn btn-ghost btn-sm self-start"
             >← Back to Home</a
           >
         </div>
@@ -306,14 +306,14 @@
           outputs.
         </p>
         <p class="text-sm text-base-content/50">
-          Copyright © 2024 - All rights reserved
+          Copyright Â© 2024 - All rights reserved
         </p>
       </aside>
       <nav>
         <div class="grid grid-flow-col gap-4 text-sm">
-          <a href="index.html#home" class="link link-hover">Home</a>
-          <a href="index.html#topics" class="link link-hover">Topics</a>
-          <a href="works.html" class="link link-hover">Works &amp; Outputs</a>
+          <a href="/index.html" class="link link-hover">Home</a>
+          <a href="/index.html" class="link link-hover">Topics</a>
+          <a href="/works.html" class="link link-hover">Works &amp; Outputs</a>
         </div>
       </nav>
     </footer>
