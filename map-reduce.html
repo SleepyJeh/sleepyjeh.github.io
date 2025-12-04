@@ -1,1 +1,325 @@
-﻿
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapReduce Study Notes • Cloud Computing Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body class="min-h-screen bg-base-100 flex flex-col">
+    <header class="border-b border-base-200 bg-base-100/80 backdrop-blur z-30">
+      <nav
+        class="navbar mx-auto max-w-6xl px-4 lg:px-6"
+        aria-label="Global navigation"
+      >
+        <div class="flex-1">
+          <a href="/index.html" class="flex items-center gap-2">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-content font-semibold"
+              >CC</span
+            >
+            <span class="font-semibold text-lg tracking-tight"
+              >Cloud Computing Portfolio</span
+            >
+          </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="/index.html" class="btn btn-ghost btn-sm font-medium"
+            >Home</a
+          >
+
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Topics</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
+            >
+              <li><a href="/rest-api.html">Rest API</a></li>
+              <li><a href="/map-reduce.html">Map Reduce</a></li>
+              <li><a href="/aws-vm.html">AWS / VM Instance</a></li>
+              <li><a href="/cloud-native.html">Cloud Native</a></li>
+              <li><a href="/devops-persona.html">DevOps Persona</a></li>
+              <li><a href="/docker.html">Docker</a></li>
+              <li>
+                <a href="/containerization-vs-virtualization.html"
+                  >Containerization vs Virtualization</a
+                >
+              </li>
+              <li><a href="/kubernetes.html">Kubernetes</a></li>
+              <li><a href="/terraform.html">Terraform</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Works &amp; Outputs</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
+            >
+              <li><a href="/works.html">Overview</a></li>
+              <li>
+                <a href="/works-docker-study-guide.html">A Docker Study Guide</a>
+              </li>
+              <li>
+                <a href="/works-kubernetes-home-lab.html"
+                  >Kubernetes Home Lab Activity</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <section class="py-12 lg:py-16 bg-base-100">
+        <div class="max-w-5xl mx-auto px-4 lg:px-6 space-y-12">
+          
+          <div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                <div>
+                    <p class="text-sm font-medium text-primary mb-2">Topic Overview</p>
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">MapReduce & Batch Processing</h1>
+                    <p class="text-lg text-base-content/80 max-w-2xl">
+                    Detailed study notes based on the 2004 paper by Jeffrey Dean and Sanjay Ghemawat (Google).
+                    </p>
+                </div>
+                <div class="badge badge-outline">Map Reduce</div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">1. The Problem: "Why MapReduce?"</h2>
+              <div class="prose prose-sm">
+                  <p>
+                      Modern applications need to process huge datasets (web crawls, request logs) to generate outputs like inverted indices or query summaries.
+                      To speed this up, we must distribute data across hundreds of machines.
+                  </p>
+                  <div class="alert alert-warning not-prose shadow-sm my-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    <div>
+                      <h3 class="font-bold">The Challenge of Parallelism</h3>
+                      <p class="text-xs">Managing distributed computation manually is a nightmare. Developers have to deal with race conditions, data distribution, fault tolerance, and load balancing.</p>
+                    </div>
+                  </div>
+                  <p>
+                      <strong>Solution:</strong> MapReduce provides an abstraction layer. It hides these "messy details" in a library, allowing the programmer to focus simply on the computation logic.
+                  </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">2. The Programming Model</h2>
+              <p class="text-sm opacity-70">The framework transforms a set of input key/value pairs into a set of output key/value pairs using two user-defined functions.</p>
+
+              
+              <div class="grid lg:grid-cols-2 gap-6 mt-4">
+                  <div class="bg-base-300 p-5 rounded-xl border border-base-100">
+                      <h3 class="font-bold text-lg text-primary mb-2">Map Function</h3>
+                      <p class="text-xs mb-3 font-mono">map(k1, v1) Ã¢â€ â€™ list(k2, v2)</p>
+                      <p class="text-sm mb-4">Takes an input pair and produces a set of <em>intermediate</em> key/value pairs. The library groups all values associated with the same intermediate key `k2` and passes them to the Reduce function.</p>
+                      
+                      <div class="mockup-code bg-base-100 text-xs">
+                        <pre><code>map(doc_name, content):
+  for word in content:
+    EmitIntermediate(word, "1")</code></pre>
+                      </div>
+                  </div>
+
+                  <div class="bg-base-300 p-5 rounded-xl border border-base-100">
+                      <h3 class="font-bold text-lg text-accent mb-2">Reduce Function</h3>
+                      <p class="text-xs mb-3 font-mono">reduce(k2, list(v2)) Ã¢â€ â€™ list(v2)</p>
+                      <p class="text-sm mb-4">Accepts an intermediate key and a list of values for that key. It merges these values to form a smaller set (often just zero or one value).</p>
+                      
+                      <div class="mockup-code bg-base-100 text-xs">
+                        <pre><code>reduce(word, counts_list):
+  result = 0
+  for count in counts_list:
+    result += ParseInt(count)
+  Emit(AsString(result))</code></pre>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="mt-4">
+                  <h4 class="font-bold text-sm mb-2">Other Example Applications:</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="badge badge-outline">Distributed Grep</span>
+                      <span class="badge badge-outline">URL Access Frequency</span>
+                      <span class="badge badge-outline">Reverse Web-Link Graph</span>
+                      <span class="badge badge-outline">Inverted Index</span>
+                      <span class="badge badge-outline">Distributed Sort</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">3. System Architecture & Execution</h2>
+              <p class="text-sm">Based on Google's 2004 infrastructure (Commodity PCs, Ethernet, GFS).</p>
+              
+              
+              <div class="overflow-x-auto mt-4">
+                  <table class="table table-zebra w-full text-sm">
+                      <thead>
+                          <tr>
+                              <th>Component</th>
+                              <th>Role</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td class="font-bold">Master</td>
+                              <td>The coordinator. Keeps track of task states (idle, in-progress, completed) and worker identities. Assigns tasks to idle workers.</td>
+                          </tr>
+                          <tr>
+                              <td class="font-bold">Map Workers</td>
+                              <td>Read input splits (typically 16-64MB) from GFS. Process data and buffer intermediate pairs in memory, then write to local disk.</td>
+                          </tr>
+                          <tr>
+                              <td class="font-bold">Reduce Workers</td>
+                              <td>Read intermediate data (via RPC) from Map workers' local disks. Sort the data by key, apply the Reduce function, and append output to a final GFS file.</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+
+              <div class="mt-6">
+                  <h3 class="font-bold text-lg mb-2">Parallel Execution Parameters</h3>
+                  <ul class="list-disc list-inside text-sm space-y-1 ml-2">
+                      <li><strong>M (Map Tasks):</strong> Number of input splits. Usually much larger than the number of worker nodes to improve load balancing.</li>
+                      <li><strong>R (Reduce Tasks):</strong> Specified by the user. Determined by partitioning function, e.g., <code>hash(key) mod R</code>.</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">4. Fault Tolerance</h2>
+              <p class="text-sm">In a cluster of 2,000+ machines, failure is the norm, not the exception.</p>
+
+              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-2">
+                <input type="checkbox" /> 
+                <div class="collapse-title font-bold text-error">
+                  Scenario A: Worker Failure
+                </div>
+                <div class="collapse-content text-sm"> 
+                  <p class="mb-2">Detected via lack of heartbeat messages.</p>
+                  <ul class="list-disc list-inside space-y-2">
+                      <li><strong>In-progress tasks:</strong> Reset to 'idle' and re-scheduled on other workers.</li>
+                      <li><strong>Completed Map tasks:</strong> MUST be re-executed. <span class="text-xs opacity-70 block ml-5">Reason: Map output is stored on the <em>failed machine's local disk</em> and is arguably inaccessible.</span></li>
+                      <li><strong>Completed Reduce tasks:</strong> Do NOT need re-execution. <span class="text-xs opacity-70 block ml-5">Reason: Reduce output is stored in the global <em>GFS system</em>.</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-2">
+                <input type="checkbox" /> 
+                <div class="collapse-title font-bold text-warning">
+                  Scenario B: Master Failure
+                </div>
+                <div class="collapse-content text-sm"> 
+                  <p>A rare event. The master can write periodic checkpoints. If it dies, the standard solution is to simply <strong>abort the job</strong> and have the client retry.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">5. Critical Optimizations</h2>
+              <p class="text-sm">Techniques used to ensure high performance and efficiency.</p>
+
+              <div class="grid md:grid-cols-2 gap-4 mt-2">
+                  <div class="card bg-base-300 p-4">
+                      <h3 class="font-bold text-accent">Data Locality</h3>
+                      <p class="text-xs mt-2">Network bandwidth is scarce. The Master attempts to schedule Map tasks on the machine that <em>already holds the input data</em> (on its local disk via GFS). This moves the computation to the data, rather than moving data to the computation.</p>
+                  </div>
+                  
+                  <div class="card bg-base-300 p-4">
+                      <h3 class="font-bold text-accent">Backup Tasks (Stragglers)</h3>
+                      <p class="text-xs mt-2">A "straggler" is a machine that is alive but performing very slowly (e.g., due to a bad disk). Near the end of a job, the Master schedules backup copies of remaining tasks. The task is done when <em>either</em> the primary or backup finishes. <br/><span class="opacity-70 italic">Result: Reduced execution time by 44% in sorting tests.</span></p>
+                  </div>
+
+                  <div class="card bg-base-300 p-4">
+                      <h3 class="font-bold text-accent">Combiner Function</h3>
+                      <p class="text-xs mt-2">A mini-reduce phase running on the Map worker. For example, in Word Count, a map worker might see "the" 500 times. Instead of sending 500 records over the network, the Combiner merges them into ("the", 500) locally before sending to the Reducer.</p>
+                  </div>
+
+                  <div class="card bg-base-300 p-4">
+                      <h3 class="font-bold text-accent">Partitioning Function</h3>
+                      <p class="text-xs mt-2">Users can specify how data is partitioned among Reducers. The default is `hash(key) mod R`, but for URLs, one might use `hash(hostname(url)) mod R` to keep all pages from the same host in the same output file.</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+          <a href="/index.html" class="btn btn-ghost btn-sm self-start"
+            >â† Back to Home</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="footer footer-center p-8 bg-base-200 text-base-content mt-8 border-t border-base-300"
+    >
+      <aside>
+        <p class="font-bold text-lg">My Cloud Computing Portfolio</p>
+        <p class="text-base-content/70">
+          Elective 3: Cloud Computing &mdash; compiled learnings, topics, and
+          outputs.
+        </p>
+        <p class="text-sm text-base-content/50">
+          Copyright © 2024 - All rights reserved
+        </p>
+      </aside>
+      <nav>
+        <div class="grid grid-flow-col gap-4 text-sm">
+          <a href="/index.html" class="link link-hover">Home</a>
+          <a href="/index.html" class="link link-hover">Topics</a>
+          <a href="/works.html" class="link link-hover">Works &amp; Outputs</a>
+        </div>
+      </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

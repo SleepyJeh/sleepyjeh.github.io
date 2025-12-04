@@ -1,1 +1,286 @@
-﻿
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtualization vs. Containerization • Cloud Computing Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body class="min-h-screen bg-base-100 flex flex-col">
+    <header class="border-b border-base-200 bg-base-100/80 backdrop-blur z-30">
+      <nav
+        class="navbar mx-auto max-w-6xl px-4 lg:px-6"
+        aria-label="Global navigation"
+      >
+        <div class="flex-1">
+          <a href="/index.html" class="flex items-center gap-2">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-content font-semibold"
+              >CC</span
+            >
+            <span class="font-semibold text-lg tracking-tight"
+              >Cloud Computing Portfolio</span
+            >
+          </a>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="/index.html" class="btn btn-ghost btn-sm font-medium"
+            >Home</a
+          >
+
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Topics</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
+            >
+              <li><a href="/rest-api.html">Rest API</a></li>
+              <li><a href="/map-reduce.html">Map Reduce</a></li>
+              <li><a href="/aws-vm.html">AWS / VM Instance</a></li>
+              <li><a href="/cloud-native.html">Cloud Native</a></li>
+              <li><a href="/devops-persona.html">DevOps Persona</a></li>
+              <li><a href="/docker.html">Docker</a></li>
+              <li>
+                <a href="/containerization-vs-virtualization.html"
+                  >Containerization vs Virtualization</a
+                >
+              </li>
+              <li><a href="/kubernetes.html">Kubernetes</a></li>
+              <li><a href="/terraform.html">Terraform</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-sm gap-1">
+              <span>Works &amp; Outputs</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.085l3.71-3.854a.75.75 0 111.08 1.04l-4.25 4.417a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content mt-3 w-72 rounded-box bg-base-100 p-3 shadow-lg border border-base-200"
+            >
+              <li><a href="/works.html">Overview</a></li>
+              <li>
+                <a href="/works-docker-study-guide.html">A Docker Study Guide</a>
+              </li>
+              <li>
+                <a href="/works-kubernetes-home-lab.html"
+                  >Kubernetes Home Lab Activity</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <section class="py-12 lg:py-16 bg-base-100">
+        <div class="max-w-5xl mx-auto px-4 lg:px-6 space-y-12">
+          
+          <div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                <div>
+                    <p class="text-sm font-medium text-primary mb-2">Topic Overview</p>
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">Virtualization vs. Containerization</h1>
+                    <p class="text-lg text-base-content/80 max-w-3xl">
+                    A comparative analysis based on the study <em>"Virtualization vs. Containerization, a Comparative Approach for Application Deployment in the Computing Continuum Focused on the Edge"</em>.
+                    </p>
+                    <p class="text-sm mt-2 opacity-60">
+                        Authors: H. Sturley, A. Fournier, A. Salcedo-Navarro, M. Garcia-Pineda, J. Segura-Garcia
+                    </p>
+                </div>
+                <div class="badge badge-lg badge-outline">Edge Computing</div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">1. The Core Distinction</h2>
+              <p>The study differentiates the two technologies based on their abstraction layer:</p>
+              
+              
+
+              <div class="grid md:grid-cols-2 gap-6 mt-4">
+                  <div class="bg-base-300 p-4 rounded-xl">
+                      <h3 class="font-bold text-accent mb-2">Virtual Machines (VMs)</h3>
+                      <p class="text-sm">
+                          Virtualize the <strong>hardware infrastructure</strong>. Each VM runs a full, autonomous Guest OS. They provide precise low-layer control and strong isolation but are resource-heavy.
+                      </p>
+                  </div>
+                  <div class="bg-base-300 p-4 rounded-xl">
+                      <h3 class="font-bold text-success mb-2">Containers</h3>
+                      <p class="text-sm">
+                          Virtualize at the <strong>application/OS level</strong>. They share the Host OS kernel, making them lightweight, flexible, and portable. They do not virtualize low-layer components like the CPU directly.
+                      </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">2. Evaluation Criteria</h2>
+              <p class="text-sm opacity-70">The paper compares both methods on three critical pillars for Edge computing:</p>
+
+              <div class="stats stats-vertical lg:stats-horizontal shadow bg-base-100 w-full mt-4">
+                  <div class="stat">
+                    <div class="stat-title font-bold text-primary">Compatibility</div>
+                    <div class="stat-desc whitespace-normal mt-2">Based on user experience and ease of installation/deployment.</div>
+                  </div>
+                  
+                  <div class="stat">
+                    <div class="stat-title font-bold text-primary">Scalability</div>
+                    <div class="stat-desc whitespace-normal mt-2">Based on automatic elasticity when facing fluctuating workloads.</div>
+                  </div>
+                  
+                  <div class="stat">
+                    <div class="stat-title font-bold text-primary">Energy Efficiency</div>
+                    <div class="stat-desc whitespace-normal mt-2">Consumption of energy and computer resources (CPU/RAM).</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">3. Key Findings & Results</h2>
+              
+              <div class="overflow-x-auto mt-2">
+                <table class="table table-zebra w-full text-sm">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Virtual Machines</th>
+                      <th>Containers</th>
+                      <th>Verdict</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="font-bold">Boot Time</td>
+                      <td>Slow (Minutes). Requires booting full OS.</td>
+                      <td>Fast (Seconds). Processes start instantly.</td>
+                      <td><span class="badge badge-success badge-sm">Containers</span></td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">Resource Usage</td>
+                      <td>High overhead (Duplicate OS kernels).</td>
+                      <td>Minimal overhead (Shared kernel).</td>
+                      <td><span class="badge badge-success badge-sm">Containers</span></td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">Isolation</td>
+                      <td>Strong (Hardware level).</td>
+                      <td>Process level (Weaker but improving).</td>
+                      <td><span class="badge badge-warning badge-sm">VMs</span></td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">PaaS / SaaS</td>
+                      <td>Heavier deployment.</td>
+                      <td>Superior performance.</td>
+                      <td><span class="badge badge-success badge-sm">Containers</span></td>
+                    </tr>
+                    <tr>
+                      <td class="font-bold">IaaS</td>
+                      <td>Standard.</td>
+                      <td>Similar performance metrics.</td>
+                      <td><span class="badge badge-neutral badge-sm">Tie</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="alert alert-success mt-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <div>
+                  <h3 class="font-bold">Main Conclusion</h3>
+                  <div class="text-sm">
+                    The study concludes that <strong>containerization is the most ecologically advantageous option</strong> in terms of energy consumption, making it the preferred choice for Edge Computing environments where resources are constrained.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl border border-base-300">
+            <div class="card-body">
+              <h2 class="card-title text-2xl text-secondary">4. Why it matters for the Edge?</h2>
+              <p class="text-sm">
+                  Edge computing moves data processing closer to the source (IoT devices, gateways) rather than centralized cloud servers.
+              </p>
+              
+              <div class="flex flex-col md:flex-row gap-4 mt-4">
+                  <div class="flex-1 card bg-base-100 border-l-4 border-error p-4">
+                      <h3 class="font-bold">Constraints</h3>
+                      <p class="text-xs mt-1">Edge devices often have limited battery, CPU power, and cooling capacity.</p>
+                  </div>
+                  <div class="flex-1 card bg-base-100 border-l-4 border-success p-4">
+                      <h3 class="font-bold">Solution</h3>
+                      <p class="text-xs mt-1">Because containers consume less energy for the same workload, they extend the operational life and efficiency of Edge infrastructure.</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="/index.html" class="btn btn-ghost btn-sm self-start"
+            >â† Back to Home</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="footer footer-center p-8 bg-base-200 text-base-content mt-8 border-t border-base-300"
+    >
+      <aside>
+        <p class="font-bold text-lg">My Cloud Computing Portfolio</p>
+        <p class="text-base-content/70">
+          Elective 3: Cloud Computing &mdash; compiled learnings, topics, and
+          outputs.
+        </p>
+        <p class="text-sm text-base-content/50">
+          Copyright © 2024 - All rights reserved
+        </p>
+      </aside>
+      <nav>
+        <div class="grid grid-flow-col gap-4 text-sm">
+          <a href="/index.html" class="link link-hover">Home</a>
+          <a href="/index.html" class="link link-hover">Topics</a>
+          <a href="/works.html" class="link link-hover">Works &amp; Outputs</a>
+        </div>
+      </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
